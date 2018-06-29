@@ -13,6 +13,10 @@ const routes: Routes = [
     path:'produtos'
   },
   {
+    loadChildren:'./categorias/categorias.module#CategoriasModule',
+    path:'categorias'
+  },
+  {
     component:HomeComponent,
     path:'**'
   }
