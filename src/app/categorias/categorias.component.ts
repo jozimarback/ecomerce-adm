@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { CategoriasService } from './categorias.service';
+=======
+>>>>>>> origin/master
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class CategoriasComponent implements OnInit {
+<<<<<<< HEAD
   categorias;
   constructor(private categoriaService:CategoriasService) { }
 
@@ -16,4 +20,12 @@ export class CategoriasComponent implements OnInit {
 
 
 
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+>>>>>>> origin/master
 }
