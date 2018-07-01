@@ -10,19 +10,13 @@ const routes: Routes = [
     path:''
   },
   {
-    // loadChildren:'./produtos/produtos.module#ProdutosModule',
-    component:CategoriasComponent,
+    loadChildren:'./categorias/categorias.module#CategoriasModule',
     path:'categorias'
   },
   {
     loadChildren:'./produtos/produtos.module#ProdutosModule',
     path:'produtos'
-  },
-  {
-    loadChildren:'./categorias/categorias.module#CategoriasModule',
-    path:'categorias'
-  },
-  {
+  },{
     component:HomeComponent,
     path:'**'
   }

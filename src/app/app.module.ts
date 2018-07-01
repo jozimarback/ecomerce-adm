@@ -6,13 +6,11 @@ import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './home/home.component';
-import { CategoriasComponent } from './categorias/categorias.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CategoriasComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

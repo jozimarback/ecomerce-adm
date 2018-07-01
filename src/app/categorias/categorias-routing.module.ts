@@ -1,15 +1,11 @@
 import { CategoriasComponent } from './categorias.component';
-<<<<<<< HEAD
 import { CategoriaFormComponent } from './categoria-form/categoria-form.component';
-=======
->>>>>>> origin/master
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
     path:'',
-<<<<<<< HEAD
     component:CategoriasComponent,
     
   },
@@ -20,12 +16,9 @@ const routes: Routes = [
   {
     path:'editar/:codigo',
     component:CategoriaFormComponent
-=======
-    component:CategoriasComponent
   },
   {
     
->>>>>>> origin/master
   }
 ];
 

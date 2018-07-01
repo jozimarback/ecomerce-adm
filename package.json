@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o | json-server --watch db/db.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -22,8 +22,11 @@
     "@angular/router": "^6.0.0",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
+    "devextreme": "^18.1.4",
+    "devextreme-angular": "^18.1.4",
     "feather-icons": "^4.7.3",
     "rxjs": "^6.0.0",
+    "ti-icons": "^0.1.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

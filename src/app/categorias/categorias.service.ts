@@ -1,22 +1,25 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriasService {
 
-  constructor() { }
+  constructor(private httpClient:HttpClient) { }
 
   obter(){
     return localStorage.getItem('categorias') || [];
   }
 
-  inserir(modelo){
-    var lsCategorias = localStorage.getItem('categorias');
-    var categorias = (lsCategorias)? JSON.parse(lsCategorias) : [];
+  inserir = (modelo) => this.httpClient
+    .post(`${environment.urlApi}/categorias`,modelo);
+    // var lsCategorias = localStorage.getItem('categorias');
+    // var categorias = (lsCategorias)? JSON.parse(lsCategorias) : [];
     
-    localStorage.setItem('categorias',categorias.push(modelo))
-  }
+    // localStorage.setItem('categorias',categorias.push(modelo))
+  
 
   alterar(modelo){
     

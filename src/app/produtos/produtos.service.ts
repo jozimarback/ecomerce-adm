@@ -10,10 +10,10 @@ export class ProdutosService {
   constructor(private httpClient:HttpClient) { }
 
   obter(){
-    return this.httpClient.get(`${environment.urlApi}produtos`)
+    // return this.httpClient.get(`${environment.urlApi}produtos`)
   }
 
   inserir(){
-    return this.httpClient.post(`${environment.urlApi}produtos`,{})
+    // return this.httpClient.post(`${environment.urlApi}produtos`,{})
   }
 }

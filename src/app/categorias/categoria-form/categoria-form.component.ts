@@ -1,5 +1,8 @@
+import { CategoriaModel } from './../categoria-model';
+import { CategoriasService } from './../categorias.service';
 import { Component, OnInit } from '@angular/core';
 import { Inativo } from '../../shared/utils/inativo.enum';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categoria-form',
@@ -8,12 +11,19 @@ import { Inativo } from '../../shared/utils/inativo.enum';
 })
 export class CategoriaFormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router,
+  private categoriaService:CategoriasService) { }
 
   ngOnInit() {
-    Object.keys(Inativo)
+    
   }
-salvar(){
-  
-}
+  salvar(modelo:CategoriaModel) {
+    if(this.router.url.indexOf('inserir') > -1){
+      this.categoriaService.inserir(modelo)
+      .subscribe((s) => {
+        console.log(s);
+
+      })
+    }
+  }
 }
