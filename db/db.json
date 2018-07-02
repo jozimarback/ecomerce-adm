@@ -1,5 +1,17 @@
 {
-  "produtos": [
-  ],
-  "categorias": []
+  "produtos": [],
+  "categorias": [
+    {
+      "codigo": "654984",
+      "nome": "Camiseta",
+      "status": "0",
+      "id": 1
+    },
+    {
+      "codigo": "5648941",
+      "nome": "Tenis",
+      "status": "0",
+      "id": 2
+    }
+  ]
 }

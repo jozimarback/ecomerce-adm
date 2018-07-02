@@ -1,7 +1,7 @@
 import { Inativo } from "../shared/utils/inativo.enum";
 
-export interface CategoriaModel {
+export class CategoriaModel {
     codigo:string;
     nome:string;
-    Inativo:Inativo;
+    status:Inativo;
 }

@@ -3,31 +3,28 @@
 <div class="card card-border-color card-border-color-primary">
   <div class="card-header card-header-divider">Inserir categorias</div>
   <div class="card-body">
-    <form>
+    <form #f="ngForm" (submit)="salvar()">
       <div class="form-group pt-2">
-        <label for="inputEmail">Email address</label>
-        <input id="inputEmail" type="email" placeholder="Enter email" class="form-control">
+        <label for="codigo">Código</label>
+        <input id="codigo" type="text" name="codigo" [(ngModel)]="model.codigo" placeholder="Ex: 68542" class="form-control">
       </div>
-      <div class="form-group">
-        <label for="inputPassword">Password</label>
-        <input id="inputPassword" type="password" placeholder="Password" class="form-control">
-      </div>
-      <div class="row pt-3">
-        <div class="col-lg-6 pb-4 pb-lg-0">
-          <label class="be-checkbox custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input"><span class="custom-control-label">Remember me</span>
-          </label>
+      <div class="form-group pt-2">
+          <label for="nome">Nome</label>
+          <input id="nome" type="text" name="nome" required [(ngModel)]="model.nome" placeholder="Ex: Calçados" class="form-control">
         </div>
-        <select>
-          <!-- <option *ngFor="let item of inativo |key"></option> -->
-        </select>
+        <div class="form-group pt-2">
+            <label for="status">Status</label>
+            <select id="status" name="status" [(ngModel)]="model.status" class="form-control">
+              <option value="0">Ativo</option>
+              <option value="1">Inativo</option>
+            </select>
+          </div>
         <div class="col-sm-6">
           <p class="text-right">
-            <button type="submit" class="btn btn-space btn-primary" (click)="salvar()" >Salvar</button>
+            <button type="submit" class="btn btn-space btn-primary" >Salvar</button>
             <a class="btn btn-secondary" routerLink="../">Voltar</a>
           </p>
         </div>
-      </div>
     </form>
   </div>
 </div>

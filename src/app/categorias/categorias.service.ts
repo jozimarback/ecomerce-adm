@@ -14,7 +14,7 @@ export class CategoriasService {
   }
 
   inserir = (modelo) => this.httpClient
-    .post(`${environment.urlApi}/categorias`,modelo);
+    .post(`${environment.urlApi}categorias`,modelo);
     // var lsCategorias = localStorage.getItem('categorias');
     // var categorias = (lsCategorias)? JSON.parse(lsCategorias) : [];
     

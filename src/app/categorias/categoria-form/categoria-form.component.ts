@@ -10,16 +10,19 @@ import { Router } from '@angular/router';
   styles: []
 })
 export class CategoriaFormComponent implements OnInit {
-
+  model:CategoriaModel
   constructor(private router:Router,
-  private categoriaService:CategoriasService) { }
+  private categoriaService:CategoriasService) { 
+    this.model = new CategoriaModel();
+
+  }
 
   ngOnInit() {
     
   }
-  salvar(modelo:CategoriaModel) {
+  salvar() {
     if(this.router.url.indexOf('inserir') > -1){
-      this.categoriaService.inserir(modelo)
+      this.categoriaService.inserir(this.model)
       .subscribe((s) => {
         console.log(s);
 
