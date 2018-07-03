@@ -22,25 +22,28 @@ export class CategoriasService {
   
 
   alterar(modelo){
+    return this.httpClient
+    .put(`${environment.urlApi}categorias`,modelo);
+    // var categorias = JSON.parse(localStorage.getItem('categorias'));
     
-    var categorias = JSON.parse(localStorage.getItem('categorias'));
-    
-    categorias = categorias
-      .map(cat => {
-        if(cat.codigo == modelo.codigo)
-          cat = modelo;
-        return cat;
-      });
+    // categorias = categorias
+    //   .map(cat => {
+    //     if(cat.codigo == modelo.codigo)
+    //       cat = modelo;
+    //     return cat;
+    //   });
 
 
-    localStorage.setItem('categorias',categorias);
+    // localStorage.setItem('categorias',categorias);
   }
 
   remover(modelo){
-    var categorias = JSON.parse(localStorage.getItem('categorias'));
-    localStorage.setItem('categorias',categorias
-    .splice(categorias
-      .findIndex(f => f.codigo !== modelo.codigo),1));
+    return this.httpClient
+    .delete(`${environment.urlApi}categorias`,modelo.id)
+    // var categorias = JSON.parse(localStorage.getItem('categorias'));
+    // localStorage.setItem('categorias',categorias
+    // .splice(categorias
+    //   .findIndex(f => f.codigo !== modelo.codigo),1));
     // localStorage.setItem('categorias',categorias.filter(f => f.codigo !== modelo.codigo));
   }
 }
