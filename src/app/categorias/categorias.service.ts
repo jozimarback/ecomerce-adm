@@ -1,6 +1,8 @@
+import { CategoriaModel } from './categoria-model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +11,16 @@ export class CategoriasService {
 
   constructor(private httpClient:HttpClient) { }
 
-  obter(){
-    return localStorage.getItem('categorias') || [];
+  obter():Observable<CategoriaModel[]>{
+    return this.httpClient
+    .get<CategoriaModel[]>(`${environment.urlApi}categorias`);
+    // return localStorage.getItem('categorias') || [];
+  }
+
+  
+  obterId(id:number){
+    return this.httpClient
+    .get<CategoriaModel>(`${environment.urlApi}categorias/${id}`);
   }
 
   inserir = (modelo) => this.httpClient

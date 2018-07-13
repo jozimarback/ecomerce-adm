@@ -14,7 +14,7 @@ const routes: Routes = [
     component:CategoriaFormComponent
   },
   {
-    path:'editar/:codigo',
+    path:'editar/:id',
     component:CategoriaFormComponent
   },
   {
