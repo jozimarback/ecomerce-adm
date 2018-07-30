@@ -11,7 +11,17 @@ export class CategoriasComponent implements OnInit {
   constructor(private categoriaService:CategoriasService) { }
 
   ngOnInit() {
+    this.obterCategorias();
+  }
+  
+  obterCategorias(){
     this.categorias = this.categoriaService.obter();
+  }
+
+  excluirCategoria(id){
+    this.categoriaService.remover(id)
+      .toPromise()
+      .then(() => this.obterCategorias());
   }
 
 }

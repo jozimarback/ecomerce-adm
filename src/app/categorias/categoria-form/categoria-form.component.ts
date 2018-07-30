@@ -1,6 +1,6 @@
 import { CategoriaModel } from './../categoria-model';
 import { CategoriasService } from './../categorias.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Inativo } from '../../shared/utils/inativo.enum';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -11,6 +11,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CategoriaFormComponent implements OnInit {
   model: CategoriaModel
+  tituloCard = 'Inserir';
+  @ViewChild('campoFoco') campoFoco:ElementRef; 
+
   constructor(private router: Router,
     private rotaAtiva: ActivatedRoute,
     private categoriaService: CategoriasService) {
@@ -20,22 +23,22 @@ export class CategoriaFormComponent implements OnInit {
 
   ngOnInit() {
     if(this.rotaAtiva.snapshot.params.id){
-      this.categoriaService.obterId(this.rotaAtiva.snapshot.params.id)
-      .toPromise()
-      .then(f => this.model = f)
+      this.model = this.rotaAtiva.snapshot.data['categoria'];
+      this.tituloCard = 'Editar';
     }
   }
-  salvar() {
-    if (this.model.id > 0) {
+  salvar(form) {
+    if (!this.model.id) {
       this.categoriaService.inserir(this.model)
         .subscribe((s) => {
           console.log(s);
-
+          form.resetForm();
+          this.campoFoco.nativeElement.focus();
         })
     } else{
       this.categoriaService.alterar(this.model)
         .subscribe(s => {
-          this.router.navigate(["../"])
+          this.router.navigate(["/categorias"])
         })
         
     }

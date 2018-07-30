@@ -8,32 +8,32 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CategoriasService {
-
+  urlCategoriaApi = `${environment.urlApi}categorias`;
   constructor(private httpClient:HttpClient) { }
 
   obter():Observable<CategoriaModel[]>{
     return this.httpClient
-    .get<CategoriaModel[]>(`${environment.urlApi}categorias`);
+    .get<CategoriaModel[]>(this.urlCategoriaApi);
     // return localStorage.getItem('categorias') || [];
   }
 
   
   obterId(id:number){
     return this.httpClient
-    .get<CategoriaModel>(`${environment.urlApi}categorias/${id}`);
+    .get<CategoriaModel>(`${this.urlCategoriaApi}/${id}`);
   }
 
   inserir = (modelo) => this.httpClient
-    .post(`${environment.urlApi}categorias`,modelo);
+    .post(this.urlCategoriaApi,modelo);
     // var lsCategorias = localStorage.getItem('categorias');
     // var categorias = (lsCategorias)? JSON.parse(lsCategorias) : [];
     
     // localStorage.setItem('categorias',categorias.push(modelo))
   
 
-  alterar(modelo){
+  alterar(modelo:CategoriaModel){
     return this.httpClient
-    .put(`${environment.urlApi}categorias`,modelo);
+    .put(`${this.urlCategoriaApi}/${modelo.id}`,modelo);
     // var categorias = JSON.parse(localStorage.getItem('categorias'));
     
     // categorias = categorias
@@ -47,9 +47,9 @@ export class CategoriasService {
     // localStorage.setItem('categorias',categorias);
   }
 
-  remover(modelo){
+  remover(id){
     return this.httpClient
-    .delete(`${environment.urlApi}categorias`,modelo.id)
+    .delete(`${this.urlCategoriaApi}/${id}`)
     // var categorias = JSON.parse(localStorage.getItem('categorias'));
     // localStorage.setItem('categorias',categorias
     // .splice(categorias

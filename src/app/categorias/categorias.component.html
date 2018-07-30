@@ -10,6 +10,7 @@
         <thead>
           <tr>
             <th>#</th>
+            <th>Id</th>
             <th>Código</th>
             <th>Nome</th>
             <th>Status</th>
@@ -17,7 +18,10 @@
         </thead>
         <tbody>
           <tr *ngFor="let item of categorias | async as list">
-            <td><a [routerLink]="'editar/'+item.id" class="btn btn-primary">Editar</a></td>
+            <td>
+                <a [routerLink]="'editar/'+item.id" class="btn btn-primary">Editar</a>
+                <button  class="btn btn-danger" (click)="excluirCategoria(item.id)">Excluir</button>
+            </td>
             <td>{{item.id}}</td>
             <td>{{item.codigo}}</td>
             <td>{{item.nome}}</td>
