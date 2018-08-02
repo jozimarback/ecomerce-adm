@@ -1,5 +1,19 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
   <h1 class="h2">Dashboard</h1>
-  <input [value]="nome" (keyup)="this.nome = $event.target.value"  />
-  {{nome}}
+
 </div>
+<dx-pie-chart class="pie"
+                  title="Water/Land Ratio"
+                  palette="Soft Pastel"
+                  sizeGroup="piesGroup"
+                  [dataSource]="graficoCategoria">
+        <dxi-series argumentField="name"
+                    valueField="area">
+            <dxo-label [visible]="true" ></dxo-label>
+        </dxi-series>
+        <dxo-legend verticalAlignment="bottom"
+                    horizontalAlignment="center"
+                    itemTextPosition="right"
+                    [rowCount]="2">
+        </dxo-legend>
+    </dx-pie-chart>

@@ -14,27 +14,27 @@
       "id": 2
     },
     {
-      "codigo": "teste",
-      "nome": "teste 9472",
+      "codigo": "55665",
+      "nome": "Eletro",
       "status": "0",
       "id": 3
     },
     {
       "codigo": "425",
-      "nome": "novo teste",
+      "nome": "Cama",
       "status": "0",
       "id": 4
     },
     {
       "codigo": "82982485",
-      "nome": "9-okpwkk",
-      "status": "0",
+      "nome": "Mesa",
+      "status": "1",
       "id": 5
     },
     {
       "codigo": "4252",
-      "nome": "sffsf",
-      "status": "0",
+      "nome": "Banho",
+      "status": "1",
       "id": 7
     }
   ]
