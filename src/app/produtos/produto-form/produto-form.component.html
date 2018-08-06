@@ -1,3 +1,24 @@
-<p>
-  produto-form works!
-</p>
+<h2>Produtos</h2>
+
+<div class="card card-border-color card-border-color-primary">
+  <div class="card-header card-header-divider">{{tituloCard}} produtos</div>
+  <div class="card-body">
+    <form [formGroup]="formularioProduto" (submit)="salvar(formularioProduto.value)" novalidate>
+      <mt-input [label]="'Código'">
+          <input id="nome" type="text" formControlName="codigo"  placeholder="Ex: Calçados" class="form-control">
+      </mt-input>
+      <mt-input [label]="'Preço'">
+        <dx-number-box formControlName="preco"></dx-number-box>
+      </mt-input>
+      <div class="form-group pt-2">
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" formControlName="nome"  placeholder="Ex: Calçados" class="form-control">
+      </div>
+      <div class="col-sm-6">
+        <p class="text-right">
+          <button type="submit" class="btn btn-space btn-primary" >Salvar</button>
+          <a class="btn btn-secondary" [routerLink]="'/categorias'">Voltar</a>
+        </p>
+      </div>
+    </form>
+  </div>

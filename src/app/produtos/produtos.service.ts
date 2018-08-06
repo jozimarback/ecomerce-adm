@@ -1,3 +1,4 @@
+import { ProdutoModel } from './produto.model';
 import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -6,14 +7,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ProdutosService {
-
+  urlProdutoApi = `${environment.urlApi}produtos`;
   constructor(private httpClient:HttpClient) { }
 
   obter(){
-    // return this.httpClient.get(`${environment.urlApi}produtos`)
+    return this.httpClient.get(this.urlProdutoApi)
+  }
+  obterId(id:number){
+    return this.httpClient
+    .get<ProdutoModel>(`${this.urlProdutoApi}/${id}`);
+  }
+  inserir(modelo:ProdutoModel){
+    return this.httpClient.post(this.urlProdutoApi,modelo)
   }
 
-  inserir(){
-    // return this.httpClient.post(`${environment.urlApi}produtos`,{})
+  
+  remover(id){
+    return this.httpClient
+    .delete(`${this.urlProdutoApi}/${id}`)
   }
 }
