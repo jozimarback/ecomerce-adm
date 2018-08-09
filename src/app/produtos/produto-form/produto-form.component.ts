@@ -1,6 +1,8 @@
+import { ProdutosService } from './../produtos.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {  FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { ProdutoModel } from '../produto.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-produto-form',
@@ -15,7 +17,7 @@ export class ProdutoFormComponent implements OnInit {
   formularioProduto:FormGroup;
   foto:File;
   previewImagem:string;
-  constructor() { 
+  constructor(private router: Router,private produtoService:ProdutosService) { 
     this.formularioProduto = new FormGroup({
       id:new FormControl(''),
       codigo:new FormControl('',Validators.required),
@@ -36,14 +38,14 @@ export class ProdutoFormComponent implements OnInit {
   salvar(model:ProdutoModel){
     model.imagem = this.previewImagem;
     if (!model.id) {
-      this.categoriaService.inserir(this.model)
+      this.produtoService.inserir(model)
         .subscribe((s) => {
           console.log(s);
           this.form.resetForm();
           this.campoFoco.nativeElement.focus();
         })
     } else{
-      this.categoriaService.alterar(this.model)
+      this.produtoService.alterar(model)
         .subscribe(s => {
           this.router.navigate(["/categorias"])
         })
