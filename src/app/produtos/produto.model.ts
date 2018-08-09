@@ -1,11 +1,12 @@
 export class ProdutoModel {
+    id:number;
     codigo:string;
     nome:string;
     sku:string;
     marca:any;
     preco:number;
     peso:number;
-    categorias:Array<any>;
+    categoria:any;
     imagem:any;
-    variacoes:Array<any>;
+    variacoes:any;
 }

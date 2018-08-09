@@ -3,17 +3,35 @@
 <div class="card card-border-color card-border-color-primary">
   <div class="card-header card-header-divider">{{tituloCard}} produtos</div>
   <div class="card-body">
-    <form [formGroup]="formularioProduto" (submit)="salvar(formularioProduto.value)" novalidate>
+    <form #f [formGroup]="formularioProduto" (submit)="salvar(formularioProduto.value)" novalidate>
       <mt-input [label]="'Código'">
-          <input id="nome" type="text" formControlName="codigo"  placeholder="Ex: Calçados" class="form-control">
-      </mt-input>
-      <mt-input [label]="'Preço'">
-        <dx-number-box formControlName="preco"></dx-number-box>
+          <input type="text" formControlName="codigo"  placeholder="Ex: Calçados" class="form-control">
       </mt-input>
       <div class="form-group pt-2">
         <label for="nome">Nome</label>
         <input id="nome" type="text" formControlName="nome"  placeholder="Ex: Calçados" class="form-control">
       </div>
+      <mt-input [label]="'Sku'">
+        <input formControlName="sku" class="form-control"/>
+      </mt-input>
+      <mt-input [label]="'Marca'">
+        <input formControlName="marca" class="form-control"/>
+      </mt-input>
+      
+      <mt-input [label]="'Preço'">
+          <dx-number-box formControlName="preco" class="form-control"></dx-number-box>
+        </mt-input>
+        
+      <mt-input [label]="'Peso'">
+          <dx-number-box formControlName="peso" class="form-control"></dx-number-box>
+        </mt-input>
+      <mt-input [label]="'Imagem'">
+      <input 
+          type="file" 
+          formControlName="imagem"
+          accept="image/*"
+          (change)="converterImagemParaBase64($event.target.files[0])" class="form-control">
+        </mt-input>
       <div class="col-sm-6">
         <p class="text-right">
           <button type="submit" class="btn btn-space btn-primary" >Salvar</button>

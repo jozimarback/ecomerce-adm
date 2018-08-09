@@ -20,7 +20,10 @@ export class ProdutosService {
   inserir(modelo:ProdutoModel){
     return this.httpClient.post(this.urlProdutoApi,modelo)
   }
-
+  alterar(modelo:ProdutoModel){
+    return this.httpClient
+    .put(`${this.urlProdutoApi}/${modelo.id}`,modelo);
+  }
   
   remover(id){
     return this.httpClient
