@@ -11,7 +11,7 @@ export class ProdutosService {
   constructor(private httpClient:HttpClient) { }
 
   obter(){
-    return this.httpClient.get(this.urlProdutoApi)
+    return this.httpClient.get<ProdutoModel[]>(this.urlProdutoApi)
   }
   obterId(id:number){
     return this.httpClient
