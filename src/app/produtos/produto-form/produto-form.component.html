@@ -3,9 +3,9 @@
 <div class="card card-border-color card-border-color-primary">
   <div class="card-header card-header-divider">{{tituloCard}} produtos</div>
   <div class="card-body">
-    <form #f [formGroup]="formularioProduto" (submit)="salvar(formularioProduto.value)" novalidate>
+    <form [formGroup]="formularioProduto" (submit)="salvar(formularioProduto.value)" novalidate>
       <mt-input [label]="'Código'">
-          <input type="text" formControlName="codigo"  placeholder="Ex: Calçados" class="form-control">
+          <input type="text" formControlName="codigo" #campoFoco placeholder="Ex: Calçados" class="form-control">
       </mt-input>
       <div class="form-group pt-2">
         <label for="nome">Nome</label>

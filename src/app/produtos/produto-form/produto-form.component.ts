@@ -13,7 +13,6 @@ export class ProdutoFormComponent implements OnInit {
   
   tituloCard = 'Inserir';
   @ViewChild('campoFoco') campoFoco:ElementRef; 
-  @ViewChild('f') form:NgForm; 
   formularioProduto:FormGroup;
   foto:File;
   previewImagem:string;
@@ -41,13 +40,13 @@ export class ProdutoFormComponent implements OnInit {
       this.produtoService.inserir(model)
         .subscribe((s) => {
           console.log(s);
-          this.form.resetForm();
+          this.formularioProduto.reset();
           this.campoFoco.nativeElement.focus();
         })
     } else{
       this.produtoService.alterar(model)
         .subscribe(s => {
-          this.router.navigate(["/categorias"])
+          this.router.navigate(["/produtos"])
         })
         
     }
