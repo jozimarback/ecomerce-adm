@@ -19,11 +19,11 @@
       </mt-input>
       
       <mt-input [label]="'Preço'">
-          <dx-number-box formControlName="preco" class="form-control"></dx-number-box>
+          <dx-number-box format="R$ #.##0,##" formControlName="preco" class="form-control"></dx-number-box>
         </mt-input>
         
       <mt-input [label]="'Peso'">
-          <dx-number-box formControlName="peso" class="form-control"></dx-number-box>
+          <dx-number-box format="#.##0,## Kg" formControlName="peso" class="form-control"></dx-number-box>
         </mt-input>
       <mt-input [label]="'Imagem'">
       <input 

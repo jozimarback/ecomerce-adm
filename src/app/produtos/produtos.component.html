@@ -22,9 +22,11 @@
       <td>{{item.sku}}</td>
       <td>{{item.preco}}</td>
       <td>{{item.peso}}</td>
-      <td><img [src]="item.imagem" /></td>
+      <td><img [src]="item.imagem" [style.width]="'100px'" /></td>
     </tr>
   </tbody>
 </table>
 
-<!-- <dx-data-grid></dx-data-grid> -->
+<dx-data-grid [dataSource]="produtos | async">
+  
+</dx-data-grid>
