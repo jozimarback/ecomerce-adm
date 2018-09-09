@@ -1,4 +1,4 @@
-import { ProdutosService } from './../produtos.service';
+import { ProdutosService } from '../produtos.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import {  FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import { ProdutoModel } from '../produto.model';

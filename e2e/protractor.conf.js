@@ -11,6 +11,12 @@ exports.config = {
   capabilities: {
     'browserName': 'chrome'
   },
+  suites: {
+    dashboard:'./src/dashboard/*.e2e-spec.ts',
+    categorias:'./src/categorias/categorias.e2e-spec.ts',
+    'categorias-inserir':'./src/categorias/categorias-inserir.e2e-spec.ts',
+
+  },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',

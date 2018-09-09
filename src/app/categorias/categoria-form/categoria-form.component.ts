@@ -1,5 +1,5 @@
-import { CategoriaModel } from './../categoria-model';
-import { CategoriasService } from './../categorias.service';
+import { CategoriaModel } from '../categoria-model';
+import { CategoriasService } from '../categorias.service';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Inativo } from '../../shared/utils/inativo.enum';
 import { Router, ActivatedRoute } from '@angular/router';
