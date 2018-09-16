@@ -13,4 +13,13 @@ describe('workspace-project categorias', () => {
         expect(pagina.obterParagrafoPaginaCategorias()).toEqual('Categorias');
     });
 
+    it('deve existir tabela categorias',() => {
+        expect(pagina.obterTabelaCategorias().isPresent()).toEqual(true);
+    })
+
+    
+    it('existem categorias cadastradas' ,() => {
+        expect(pagina.existemCategoriasCadastradas()).toBe(true);
+        
+    })
 });

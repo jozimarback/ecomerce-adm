@@ -3,28 +3,33 @@
 <div class="card card-border-color card-border-color-primary">
   <div class="card-header card-header-divider">{{tituloCard}} categorias</div>
   <div class="card-body">
+    <div *ngIf="mensagemRetorno" id="alerta-sucesso">
+    <ngb-alert  [type]="'success'" (close)="mensagemRetorno = null">
+      {{mensagemRetorno}}
+    </ngb-alert>
+  </div>
     <form #f="ngForm" (submit)="salvar(f)">
       <div class="form-group pt-2">
         <label for="codigo">Código</label>
         <input id="codigo" type="text" #campoFoco name="codigo" [(ngModel)]="model.codigo" placeholder="Ex: 68542" class="form-control">
       </div>
       <div class="form-group pt-2">
-          <label for="nome">Nome</label>
-          <input id="nome" type="text"  name="nome" required [(ngModel)]="model.nome" placeholder="Ex: Calçados" class="form-control">
-        </div>
-        <div class="form-group pt-2">
-            <label for="status">Status</label>
-            <select id="status" name="status" [(ngModel)]="model.status" class="form-control">
-              <option value="0">Ativo</option>
-              <option value="1">Inativo</option>
-            </select>
-          </div>
-        <div class="col-sm-6">
-          <p class="text-right">
-            <button type="submit" class="btn btn-space btn-primary" >Salvar</button>
-            <a class="btn btn-secondary" [routerLink]="'/categorias'">Voltar</a>
-          </p>
-        </div>
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" name="nome" required [(ngModel)]="model.nome" placeholder="Ex: Calçados" class="form-control">
+      </div>
+      <div class="form-group pt-2">
+        <label for="status">Status</label>
+        <select id="status" name="status" [(ngModel)]="model.status" class="form-control">
+          <option value="0">Ativo</option>
+          <option value="1">Inativo</option>
+        </select>
+      </div>
+      <div class="col-sm-6">
+        <p class="text-right">
+          <button type="submit" class="btn btn-space btn-primary">Salvar</button>
+          <a class="btn btn-secondary" [routerLink]="'/categorias'">Voltar</a>
+        </p>
+      </div>
     </form>
   </div>
 </div>

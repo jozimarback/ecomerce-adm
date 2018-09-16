@@ -1,24 +1,30 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, protractor, $ } from 'protractor';
 
 
-export class CategoriasInserirPage{
-    
+export class CategoriasInserirPage {
+
     navegarParaCadastroCategorias() {
         return browser.get('/categorias/inserir');
     }
-    obterParagrafoPaginaCadastroCategorias() {
+    obterTextoParagrafoPaginaCadastroCategorias() {
         return element(by.css('app-categoria-form h2')).getText();
     }
-    selecionarOpcaoStatus(opcao:string){
+    campoCodigo = element(by.name('codigo'));
+    campoNome = element(by.name('nome'));
+    campoStatus = element(by.id('status'));
+    selecionarOpcaoStatus(opcao: string) {
         this.campoStatus.all(by.css('option[value="' + opcao + '"]')).click();
     }
+
+    botaoSalvar = element(by.buttonText('Salvar'));
+
     obterElementoSelecionado = () => browser.driver.switchTo().activeElement();
 
-    esperar = (milisegundos:number) => {
+    esperar = (milisegundos: number) => {
         browser.sleep(milisegundos);
     }
-    campoCodigo =  element(by.name('codigo'));
-    campoNome =  element(by.name('nome'));
-    campoStatus =  element(by.id('status'));
-    botaoSalvar = element(by.buttonText('Salvar'));
+    mensagemCategoriaCadastradaComsucesso() {
+        var alertaSucesso = element(by.id('alerta-sucesso'));
+        return alertaSucesso;
+    }
 }

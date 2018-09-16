@@ -8,4 +8,12 @@ export class CategoriasPage{
     obterParagrafoPaginaCategorias() {
         return element(by.css('app-categorias h2')).getText();
     }
+
+    obterTabelaCategorias(){
+        return element(by.css('app-categorias table'));
+    }
+
+    existemCategoriasCadastradas(){
+        return element(by.css('app-categorias table tbody tr')).isPresent();
+    }
 }
