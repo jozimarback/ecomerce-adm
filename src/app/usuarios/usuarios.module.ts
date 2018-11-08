@@ -2,6 +2,7 @@ import { UsuariosRoutingModule } from './usuarios-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UsuariosComponent } from './usuarios.component';
+import { UsuariosFormComponent } from './usuarios-form/usuarios-form.component';
 
 @NgModule({
   imports: [
@@ -9,7 +10,8 @@ import { UsuariosComponent } from './usuarios.component';
     UsuariosRoutingModule
   ],
   declarations: [
-    UsuariosComponent
+    UsuariosComponent,
+    UsuariosFormComponent
   ]
 })
 export class UsuariosModule { }
