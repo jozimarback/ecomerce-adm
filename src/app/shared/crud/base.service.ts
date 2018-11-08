@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class BaseService<TModel> {
+export class BaseService<TModel extends any> {
   _path = "";
   urlProdutoApi = `${environment.urlApi}{TPath}`;
   constructor(public httpClient:HttpClient,path:string) {
