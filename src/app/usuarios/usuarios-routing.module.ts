@@ -1,3 +1,4 @@
+import { UsuarioResolver } from './usuarios.resolver';
 import { Routes, RouterModule } from "@angular/router";
 import { UsuariosComponent } from "./usuarios.component";
 import { NgModule } from "@angular/core";
@@ -15,9 +16,10 @@ const routes: Routes = [
     {
       path:'editar/:id',
       component:UsuariosFormComponent,
-    //   resolve:{
-    //     Usuarios:UsuariosResolver
-    //   }
+      resolve:{
+        usuarios: UsuarioResolver
+      }
+    }
     ]
 
     

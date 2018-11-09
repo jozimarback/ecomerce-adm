@@ -20,7 +20,7 @@ export class UsuariosComponent implements OnInit {
     this.usuarios = this.usuariosService.obter();
   }
 
-  excluirProduto(id){
+  excluirUsuario (id){
     this.usuariosService.remover(id)
       .toPromise()
       .then(() => this.obterUsuarios());

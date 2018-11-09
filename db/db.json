@@ -113,8 +113,10 @@
   "usuarios": [
     {
       "id": 1,
-      "codigo": "235",
-      "nome": "\teu mesmo",
+      "codigo": "123",
+      "nome": "ad",
+      "senha": "123",
+      "ehAdmin": true,
       "status": "0"
     }
   ]
