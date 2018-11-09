@@ -11,15 +11,15 @@
     <form [formGroup]="formularioUsuario" (submit)="salvar(formularioUsuario.value)" novalidate>
       <div class="form-group pt-2">
         <label for="codigo">Código</label>
-        <input id="codigo" type="text" #campoFoco formControlName="Codigo" placeholder="Ex: 68542" class="form-control">
+        <input id="codigo" type="text" #campoFoco formControlName="codigo" placeholder="Ex: 68542" class="form-control">
       </div>
       <div class="form-group pt-2">
         <label for="nome">Nome</label>
-        <input id="nome" type="text" required formControlName="Nome" placeholder="Ex: Calçados" class="form-control">
+        <input id="nome" type="text" required formControlName="nome" placeholder="Ex: José da SIlva" class="form-control">
       </div>
       <div class="form-group pt-2">
         <label for="status">Status</label>
-        <select id="status" formControlName="Status" class="form-control">
+        <select id="status" formControlName="status" class="form-control">
           <option value="0">Ativo</option>
           <option value="1">Inativo</option>
         </select>
@@ -27,7 +27,7 @@
       <div class="col-sm-6">
         <p class="text-right">
           <button type="submit" class="btn btn-space btn-primary">Salvar</button>
-          <a class="btn btn-secondary" [routerLink]="'/categorias'">Voltar</a>
+          <a class="btn btn-secondary" [routerLink]="'/usuarios'">Voltar</a>
         </p>
       </div>
     </form>

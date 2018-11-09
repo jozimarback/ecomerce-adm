@@ -14,7 +14,16 @@ export class ProdutosComponent implements OnInit {
   constructor(private produtosService:ProdutosService) { }
 
   ngOnInit() {
+    this.obterProdutos();
+  }
+  obterProdutos(){
     this.produtos = this.produtosService.obter();
+  }
+
+  excluirProduto(id){
+    this.produtosService.remover(id)
+      .toPromise()
+      .then(() => this.obterProdutos());
   }
 
 }

@@ -1,3 +1,32 @@
-<p>
-  usuarios works!
-</p>
+<h2>Usuários</h2>
+<div class="card card-table">
+  <div class="card-header">
+    <a class="btn btn-primary" routerLink="inserir">Inserir</a>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Id</th>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of usuarios | async as list">
+            <td>
+                <a [routerLink]="'editar/'+item.id" class="btn btn-primary">Editar</a>
+                <button  class="btn btn-danger" (click)="excluirUsuario(item.id)">Excluir</button>
+            </td>
+            <td>{{item.id}}</td>
+            <td>{{item.codigo}}</td>
+            <td>{{item.nome}}</td>
+            <td>{{item.status}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

@@ -1,0 +1,20 @@
+
+<div class="card card-border-color card-border-color-primary">
+  <div class="card-header card-header-divider">Login</div>
+  <div class="card-body">
+    <form [formGroup]="formularioLogin" (submit)="salvar(formularioLogin.value)" novalidate>
+      <mt-input [label]="'Código'">
+          <input type="text" formControlName="codigo" #campoFoco placeholder="Ex: 42379" class="form-control">
+      </mt-input>
+      <mt-input [label]="'Senha'">
+        <input type="password" formControlName="senha" #campoFoco  class="form-control">
+    </mt-input>
+      
+      <div class="col-sm-6">
+        <p class="text-right">
+          <button type="submit" class="btn btn-space btn-primary" >Login</button>
+        
+        </p>
+      </div>
+    </form>
+  </div>

@@ -3,6 +3,7 @@ import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProdutosComponent } from './produtos/produtos.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -21,9 +22,14 @@ const routes: Routes = [
     loadChildren:'./usuarios/usuarios.module#UsuariosModule',
     path:'usuarios'
   },{
+    component:LoginComponent,
+    path:'login'
+
+  },{
     component:HomeComponent,
     path:'**'
   }
+
 ];
 
 @NgModule({

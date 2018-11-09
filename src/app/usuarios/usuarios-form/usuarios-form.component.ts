@@ -18,6 +18,7 @@ export class UsuariosFormComponent implements OnInit {
       id:new FormControl(''),
       codigo:new FormControl('',Validators.required),
       nome:new FormControl('',Validators.required),
+      status:new FormControl(''),
     })
   }
 
