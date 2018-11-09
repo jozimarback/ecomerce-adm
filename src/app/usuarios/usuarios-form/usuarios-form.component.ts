@@ -32,8 +32,8 @@ export class UsuariosFormComponent implements OnInit {
     this.formularioUsuario =new FormGroup({
       id:new FormControl(this.model.id),
       codigo:new FormControl(this.model.codigo,Validators.required),
-      nome:new FormControl(this.model.nome,Validators.required),
-      senha:new FormControl(this.model.senha,Validators.required),
+      nome:new FormControl(this.model.nome,[Validators.required]),
+      senha:new FormControl(this.model.senha,[Validators.required,Validators.minLength(3)]),
       ehAdmin:new FormControl(this.model.ehAdmin),
       status:new FormControl(this.model.status),
     })
