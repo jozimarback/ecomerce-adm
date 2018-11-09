@@ -1,3 +1,4 @@
+import { UsuarioModel } from './../usuarios/usuario.model';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
@@ -19,5 +20,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  logar(model:UsuarioModel){
+    console.log(model);
+  }
 }

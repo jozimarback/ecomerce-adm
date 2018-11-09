@@ -109,5 +109,13 @@
       "status": "1",
       "id": 7
     }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "codigo": "235",
+      "nome": "\teu mesmo",
+      "status": "0"
+    }
   ]
 }

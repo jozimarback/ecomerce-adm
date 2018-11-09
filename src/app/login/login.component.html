@@ -2,7 +2,7 @@
 <div class="card card-border-color card-border-color-primary">
   <div class="card-header card-header-divider">Login</div>
   <div class="card-body">
-    <form [formGroup]="formularioLogin" (submit)="salvar(formularioLogin.value)" novalidate>
+    <form [formGroup]="formularioLogin" (submit)="logar(formularioLogin.value)" novalidate>
       <mt-input [label]="'Código'">
           <input type="text" formControlName="codigo" #campoFoco placeholder="Ex: 42379" class="form-control">
       </mt-input>
