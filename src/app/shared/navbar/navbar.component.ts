@@ -1,3 +1,4 @@
+import { LoginService } from './../../login/login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
       <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Buscar">
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="#">Sair</a>
+          <a class="nav-link" href="javascript:void(0)" (click)="sair()">Sair</a>
         </li>
       </ul>
     </nav>
@@ -17,9 +18,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService:LoginService) { }
 
   ngOnInit() {
   }
-
+  sair(){
+    this.loginService.sair();
+  }
 }
