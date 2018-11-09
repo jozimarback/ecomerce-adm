@@ -1,3 +1,4 @@
+import { AuthenticationGuard } from './auth/Autorizacao.guard';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -19,7 +20,8 @@ const routes: Routes = [
       {
         component: HomeComponent,
         pathMatch: 'full',
-        path: ''
+        path: '',
+        canActivate:[AuthenticationGuard]
       },
       {
         loadChildren: './categorias/categorias.module#CategoriasModule',
