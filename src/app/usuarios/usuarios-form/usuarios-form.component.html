@@ -35,7 +35,7 @@
       </div>
       <div class="col-sm-6">
         <p class="text-right">
-          <button type="submit" class="btn btn-space btn-primary">Salvar</button>
+          <button type="submit" class="btn btn-space btn-primary" [disabled]="!formularioUsuario.valid">Salvar</button>
           <a class="btn btn-secondary" [routerLink]="'/usuarios'">Voltar</a>
         </p>
       </div>

@@ -25,7 +25,8 @@ const routes: Routes = [
       },
       {
         loadChildren: './categorias/categorias.module#CategoriasModule',
-        path: 'categorias'
+        path: 'categorias',
+        canActivate:[AuthenticationGuard]
       },
       {
         loadChildren: './produtos/produtos.module#ProdutosModule',

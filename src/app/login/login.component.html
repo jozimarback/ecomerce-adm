@@ -1,5 +1,5 @@
 
-<div class="card card-border-color card-border-color-primary">
+<div class="card card-border-color card-border-color-primary" style="width: 50%;margin: 0 auto;margin-top: 3%;">
   <div class="card-header card-header-divider">Login</div>
   <div class="card-body">
     <form [formGroup]="formularioLogin" (submit)="logar(formularioLogin.value)" novalidate>
@@ -7,7 +7,7 @@
           <input type="text" formControlName="codigo" #campoFoco placeholder="Ex: 42379" class="form-control">
       </mt-input>
       <mt-input [label]="'Senha'">
-        <input type="password" formControlName="senha" #campoFoco  class="form-control">
+        <input type="password" formControlName="senha"  class="form-control">
     </mt-input>
       
       <div class="col-sm-6">
